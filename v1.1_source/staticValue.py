@@ -20,9 +20,7 @@ team_dic = {}
 for line in f:
 	p_tmp = line.strip().split('=')
 	if len(p_tmp) > 1:
-		p_n = p_tmp[0]
-		p_v = p_tmp[1]
-		dic[p_n] = p_v
+		dic[p_tmp[0]] = p_tmp[1]
 	else:
 		t_temp = p_tmp[0].split('@')
 		"""get team ID&name dic"""
