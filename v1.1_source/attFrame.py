@@ -23,7 +23,7 @@ class ATTFrame(wx.Frame):
 		self.statusbar.SetStatusText('IBM Confidential', 1)
 
 	def onAbout(self, evt):
-		dlg = wx.MessageDialog(self, 'ATT Automation Tool\n© Copyright IBM Corporation 2017\nAll Rights Reserved\nVersion: 1.0, powered by SPRT team\nContact us:\nlizhiwcd@cn.ibm.com\ntyktang@cn.ibm.com', 'About ATT Automation Tool', wx.OK)
+		dlg = wx.MessageDialog(self, 'ATT Automation Tool\n© Copyright IBM Corporation 2017\nAll Rights Reserved\nVersion: 1.1, powered by SPRT team\nContact us:\nlizhiwcd@cn.ibm.com\ntyktang@cn.ibm.com', 'About ATT Automation Tool', wx.OK)
 		dlg.ShowModal()
 		dlg.Destroy()
 		# description = 'ATT Automation Tool is an internal tool to generate/get report from site:Agile Team Tool\nVersion: 1.0, powered by SPRT team\nContact us:\nlizhiwcd@cn.ibm.com\ntyktang@cn.ibm.com'
