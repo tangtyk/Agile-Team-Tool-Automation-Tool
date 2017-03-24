@@ -64,6 +64,11 @@ def getFloat(obj,precision=1):
 	if getSpecificType(obj,float) != None:
 		return round(getSpecificType(obj,float),precision)
 	return 0
+
+def divide_cal(num1,num2,precision=1):
+	if(num2==0):
+		return 0
+	return getFloat(getSpecificType(num1,float)/getSpecificType(num2,float),precision)
 ##input {'yyyy-mm-dd':[{squad 1 iteration 1 json data},{squad 1 iteration 2 json data}]}
 ##output {'yyyy-mm-dd':{'Velocity':value,'Squads':value1...}}
 def calculate_result(data):
@@ -83,9 +88,17 @@ def calculate_result(data):
 		teamsWithMoreTwel=0
 		teamSatisfaction = 0
 		clientSatisfaction = 0
+		#2017-03-24 add
+		cycleTimeInBacklog_count = 0
+		cycleTimeWIP_count = 0
+		teamSatisfaction_count = 0
+		clientSatisfaction_count = 0
+		itsWithFiveToTwelTeam = 0
+		
 		#[{squad 1 iteration 1 json data},{squad 1 iteration 2 json data}]
 		for it in its:
-			teamMembers = getFloat(it.get('memberFte'))
+			#2017-03-24 change from memeberFte to memberCount
+			teamMembers = getFloat(it.get('memberCount'))
 			#make sure 1 team to be counted only 1 time
 			if it.get('teamId') not in teamId_set:
 				if teamMembers<5:
@@ -94,27 +107,42 @@ def calculate_result(data):
 					teamsWithMoreTwel = teamsWithMoreTwel + 1
 				else:
 					teamsWithFiveToTwel = teamsWithFiveToTwel + 1
+			#2017-03-24 to count iterations for 5~12 member team
+			if (teamMembers>=5 and teamMembers<=12):
+				itsWithFiveToTwelTeam = itsWithFiveToTwelTeam+1
 			velocity = velocity+getInt(it.get('storyPointsDelivered'))
 			teamId_set.add(it.get('teamId'))
 			throughput = throughput+getFloat(it.get('deliveredStories'))
 			deployments = deployments+getInt(it.get('deployments'))
 			defects = defects+getInt(it.get('defects'))
-			cycleTimeInBacklog = cycleTimeInBacklog + getInt(it.get('cycleTimeInBacklog'))
-			cycleTimeWIP= cycleTimeWIP+ getInt(it.get('cycleTimeWIP'))
+			cycleTimeInBacklog = cycleTimeInBacklog + getFloat(it.get('cycleTimeInBacklog'))
+			#2017-03-24 update for backlog caculation
+			if getFloat(it.get('cycleTimeInBacklog'))>0:
+				cycleTimeInBacklog_count+=1
+			cycleTimeWIP= cycleTimeWIP+ getFloat(it.get('cycleTimeWIP'))
+			#2017-03-24 update for WIP caculation
+			if getFloat(it.get('cycleTimeWIP'))>0:
+				cycleTimeWIP_count+=1
+				
 			teamSatisfaction = teamSatisfaction+getFloat(it.get('teamSatisfaction'))
+			if getFloat(it.get('teamSatisfaction'))>0:
+				teamSatisfaction_count+=1
 			clientSatisfaction = clientSatisfaction+getFloat(it.get('clientSatisfaction'))
-		percentIter = 0
-		if throughput!=0:
-			percentIter = getFloat((teamsWithFiveToTwel/throughput)*100)
-		values = [velocity,len(teamId_set),len(its),throughput,deployments,defects,cycleTimeInBacklog,cycleTimeWIP
-		,percentIter,throughput,teamsWithFiveToTwel,teamsWithLessFive,teamsWithMoreTwel,teamSatisfaction,clientSatisfaction]
+			if getFloat(it.get('clientSatisfaction'))>0:
+				clientSatisfaction_count+=1
+		
+		#2017-03-24 update
+		percentIter = divide_cal(itsWithFiveToTwelTeam,len(its),2)*100
+		#2017-03-24 update for backlog caculation
+		values = [velocity,len(teamId_set),len(its),throughput,deployments,defects,divide_cal(cycleTimeInBacklog,cycleTimeInBacklog_count),divide_cal(cycleTimeWIP,cycleTimeWIP_count)
+		,percentIter,len(its),teamsWithFiveToTwel,teamsWithLessFive,teamsWithMoreTwel,divide_cal(teamSatisfaction,teamSatisfaction_count),divide_cal(clientSatisfaction,clientSatisfaction_count)]
 		temp = {}
 		itersPerMonth = {k:temp}
 		for i,v in enumerate(static_value._result_fields):
 			temp.update({v:values[i]})
 		result.update(itersPerMonth)
 	return result
-			
+
 def	get_group_data(input_data):
 	return calculate_result(filter_data_by_Date(input_data))
 
@@ -135,4 +163,3 @@ def sort_dict(my_dict):
 	for item in sorted_list:
 		result.append({item : my_dict.get(item)})
 	return result
-# print temp
