@@ -1,7 +1,0 @@
-geckodriver_path=geckodriver.exe
-att_login_url=https://agiletool.mybluemix.net
-json_team_list=
-5858519ea0a583041f670202@SPRT@Standalone Teams
-5858519ea0a583041f66fa40@CHIS AP@Sales & Contract Management@Contract Management - CHIS Deployment & Support Tribe
-5858519ea0a583041f66ff7d@MCLM@Sales & Contract Management@Sales & Contract Management Tools Tribe
-5858519ea0a583041f66ff9f@MTSS@Sales & Contract Management@Sales & Contract Management Tools Tribe
