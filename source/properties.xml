@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+	<geckodriver_path>geckodriver.exe</geckodriver_path>
+	<att_login_url>https://agiletool.mybluemix.net</att_login_url>
+	<teams>
+		<sub-domain name="Sales &amp; Contract Management">
+			<tribe name="Contract Management - CHIS Deployment &amp; Support Tribe">
+				<squad name="CHIS US Discovery and Deployments">
+					<id>5858519ea0a583041f66fa47</id>
+				</squad>
+				<squad name="CHIS non US Deployments">
+					<id>5858519ea0a583041f66fa49</id>
+				</squad>
+				<squad name="CHIS 2nd Level Support 1 &amp; 2">
+					<id>5858519ea0a583041f66fa3d</id>
+				</squad>
+				<squad name="CHIS Deployment and Automation">
+					<id>58c6678686942300388be468</id>
+				</squad>
+				<squad name="CHIS Deployment and Security">
+					<id>58c66921f6c0bc0039cad633</id>
+				</squad>
+			</tribe>
+			<tribe name="Contract Management - CHIS Technical Delivery Tribe">
+				<squad name="CHIS US Technical Delivery">
+					<id>5858519ea0a583041f66fa46</id>
+				</squad>
+				<squad name="CHIS AP Technical Delivery">
+					<id>5858519ea0a583041f66fa40</id>
+				</squad>
+				<squad name="CHIS EMEA/LA Techincal Delivery">
+					<id>5858519ea0a583041f66fa41</id>
+				</squad>
+				<squad name="CHIS Legacy Core">
+					<id>5858519ea0a583041f66fa43</id>
+				</squad>
+				<squad name="CHIS 820 EMEA/LA Change Mgmt.">
+					<id>5858519ea0a583041f66fa3e</id>
+				</squad>
+				<squad name="CHIS Legacy Services - 1 &amp; 2">
+					<id>5858519ea0a583041f66fa44</id>
+				</squad>
+				<squad name="CHIS Java Development">
+					<id>5858519ea0a583041f66fa42</id>
+				</squad>
+			</tribe>
+			<tribe name="Contract Management-CHIS WW Day of Announce Tribe">
+				<squad name="CHIS Print Templates">
+					<id>5858519ea0a583041f66fa45</id>
+				</squad>
+				<squad name="CHIS 820 HW Product Setup">
+					<id>5858519ea0a583041f66fa48</id>
+				</squad>
+				<squad name="CHIS SW Services Setup">
+					<id>5858519ea0a583041f66fa4a</id>
+				</squad>
+			</tribe>
+			<tribe name="Contract Mangement - SDW Tribe">
+				<squad name="SDW/MOSAIC - Development">
+					<id>589498022718eb003a8a8b9b</id>
+				</squad>
+			</tribe>
+			<tribe name="Sales &amp; Contract Management Tools Tribe">
+				<squad name="MSAT/MyQuote/SMATT">
+					<id>5858519ea0a583041f66ff95</id>
+				</squad>
+				<squad name="MTS Seller">
+					<id>5858519ea0a583041f66ff9f</id>
+				</squad>
+				<squad name="MCLM">
+					<id>5858519ea0a583041f66ff7d</id>
+				</squad>
+				<squad name="Test Automation Services">
+					<id>5858519ea0a583041f6703c9</id>
+				</squad>
+			</tribe>
+		</sub-domain>
+	</teams>
+</properties>
