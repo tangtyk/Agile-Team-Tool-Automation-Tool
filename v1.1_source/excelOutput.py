@@ -27,22 +27,25 @@ class ExcelOutput(object):
 		log.debug('dic length:',len(data))
 		for iteration in data:
 			column=0
-			for key in static_value._output_field:
-				if row == 0:
-					#write header
-					sheet.write(row,column,key)
-				#write value
-				if key == 'teamId':
-					team_name=static_value.team_dic[data[row].get(key)]
-					sheet.write(row+1,column,team_name)
-					"""v1.1 begin added Sub-domain,Tribe field by Calvin"""
-				elif key == 'Sub-domain':
-					sheet.write(row+1,column,static_value.team_dic[data[row].get('teamId') + 'Sub-domain'])
-				elif key == 'Tribe':
-					sheet.write(row+1,column,static_value.team_dic[data[row].get('teamId') + 'Tribe'])
-					"""v1.1 end"""
-				else:
-					sheet.write(row+1,column,data[row].get(key))
+			"""V1.2 update the iteration method to adapt display field change"""
+			for v in static_value._output_field:
+				for key,value in v.iteritems():
+					if row == 0:
+						#write header
+						"""V1.2 update the print value to adapt display field change"""
+						sheet.write(row,column,value)
+					#write value
+					if key == 'teamId':
+						team_name=static_value.team_dic[data[row].get(key)]
+						sheet.write(row+1,column,team_name)
+						"""v1.1 begin added Sub-domain,Tribe field by Calvin"""
+					elif key == 'Sub-domain':
+						sheet.write(row+1,column,static_value.team_dic[data[row].get('teamId') + 'Sub-domain'])
+					elif key == 'Tribe':
+						sheet.write(row+1,column,static_value.team_dic[data[row].get('teamId') + 'Tribe'])
+						"""v1.1 end"""
+					else:
+						sheet.write(row+1,column,data[row].get(key))
 				column=column+1
 			row=row+1
 
