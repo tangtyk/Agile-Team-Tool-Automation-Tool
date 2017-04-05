@@ -8,7 +8,6 @@ import staticValue as static_value
 
 #get logger
 log = logger.log
-log.propagate = False
 #get date part of a String
 #return formate yyyy-mm-dd
 def getDateStr(str):

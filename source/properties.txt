@@ -1,0 +1,23 @@
+geckodriver_path=geckodriver.exe
+att_login_url=https://agiletool.mybluemix.net
+json_team_list=
+5858519ea0a583041f66fa3d@CHIS 2nd Level Support 1 & 2@Contract Management - CHIS Deployment & Support Tribe@Sales & Contract Management
+58c6678686942300388be468@CHIS Deployment and Automation@Contract Management - CHIS Deployment & Support Tribe@Sales & Contract Management
+58c66921f6c0bc0039cad633@CHIS Deployment and Security@Contract Management - CHIS Deployment & Support Tribe@Sales & Contract Management
+5858519ea0a583041f66fa49@CHIS non US Deployments@Contract Management - CHIS Deployment & Support Tribe@Sales & Contract Management
+5858519ea0a583041f66fa47@CHIS US Discovery and Deployments@Contract Management - CHIS Deployment & Support Tribe@Sales & Contract Management
+5858519ea0a583041f66fa3e@CHIS 820 EMEA/LA Change Mgmt.@Contract Management - CHIS Technical Delivery Tribe@Sales & Contract Management
+5858519ea0a583041f66fa40@CHIS AP Technical Delivery@Contract Management - CHIS Technical Delivery Tribe@Sales & Contract Management
+5858519ea0a583041f66fa41@CHIS EMEA/LA Techincal Delivery@Contract Management - CHIS Technical Delivery Tribe@Sales & Contract Management
+5858519ea0a583041f66fa42@CHIS Java Development@Contract Management - CHIS Technical Delivery Tribe@Sales & Contract Management
+5858519ea0a583041f66fa43@CHIS Legacy Core@Contract Management - CHIS Technical Delivery Tribe@Sales & Contract Management
+5858519ea0a583041f66fa44@CHIS Legacy Services - 1 & 2@Contract Management - CHIS Technical Delivery Tribe@Sales & Contract Management
+5858519ea0a583041f66fa46@CHIS US Technical Delivery@Contract Management - CHIS Technical Delivery Tribe@Sales & Contract Management
+5858519ea0a583041f66fa48@CHIS 820 HW Product Setup@Contract Management-CHIS WW Day of Announce Tribe@Sales & Contract Management
+5858519ea0a583041f66fa45@CHIS Print Templates@Contract Management-CHIS WW Day of Announce Tribe@Sales & Contract Management
+5858519ea0a583041f66fa4a@CHIS SW Services Setup@Contract Management-CHIS WW Day of Announce Tribe@Sales & Contract Management
+589498022718eb003a8a8b9b@SDW/MOSAIC - Development@Contract Mangement - SDW Tribe@Sales & Contract Management
+5858519ea0a583041f66ff7d@MCLM@Sales & Contract Management Tools Tribe@Sales & Contract Management
+5858519ea0a583041f66ff95@MSAT/MyQuote/SMATT@Sales & Contract Management Tools Tribe@Sales & Contract Management
+5858519ea0a583041f66ff9f@MTS Seller@Sales & Contract Management Tools Tribe@Sales & Contract Management
+5858519ea0a583041f6703c9@Test Automation Services@Sales & Contract Management Tools Tribe@Sales & Contract Management

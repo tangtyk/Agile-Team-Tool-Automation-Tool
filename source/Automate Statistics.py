@@ -1,5 +1,4 @@
 import wx
-import logging
 import guiManager
 
 class MainAPP(wx.App):
@@ -21,6 +20,4 @@ def main():
     app.MainLoop()
 
 if __name__=="__main__":
-	logging.basicConfig()
 	main()
-	logging.shutdown()

@@ -4,9 +4,6 @@ import attFrame
 import requests
 import staticValue
 import excelOutput
-# from os.path import join, abspath
-
-# requests.utils.DEFAULT_CA_BUNDLE_PATH = join(abspath('.'), 'cacert.pem')
 
 class GenerateFrame(attFrame.ATTFrame):
 
@@ -18,7 +15,7 @@ class GenerateFrame(attFrame.ATTFrame):
 		self.generateButton = wx.Button(panel, -1, 'Generate', pos=(245, 120))
 		self.Bind(wx.EVT_BUTTON, self.onGenerate, self.generateButton)
 
-		self.json_url_dic = staticValue.team_dic
+		self.json_url_dic = staticValue.dic
 		self.iteration_url = staticValue.iteration_url
 		self.cookieHeaders = {}
 		self.excelOutput = excelOutput.ExcelOutput()

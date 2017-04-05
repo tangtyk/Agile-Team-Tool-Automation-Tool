@@ -58,7 +58,7 @@ class LoginFrame(attFrame.ATTFrame):
 		now = time.time()
 		connect_sid = self.convertCookieToSid(driver.get_cookies())
 		while connect_sid == None:
-			if (time.time() - now) >60:
+			if (time.time() - now) > 60:
 				self.popMessageDialog('Request timed out, please try again.', wx.OK)
 				raise attExceptions.TimedOutException()
 			time.sleep(5)
