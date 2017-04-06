@@ -113,7 +113,8 @@ def calculate_result(data):
 			teamId_set.add(it.get('teamId'))
 			throughput = throughput+getFloat(it.get('deliveredStories'))
 			deployments = deployments+getInt(it.get('deployments'))
-			defects = defects+getInt(it.get('defects'))
+			'''2017-04-06 update the field from defects to defectsEndBal'''
+			defects = defects+getInt(it.get('defectsEndBal'))
 			cycleTimeInBacklog = cycleTimeInBacklog + getFloat(it.get('cycleTimeInBacklog'))
 			#2017-03-24 update for backlog caculation
 			if getFloat(it.get('cycleTimeInBacklog'))>0:
